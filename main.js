@@ -41,17 +41,16 @@ document.onkeyup = function (event) {
         initateGuess();
     }
 
-
-}
-
 // display to text:
 game.innerHTML = `
            
-            <p>ties: ${ties}</p> <p>You chose: ${userGuess}</p>
-            <p>The computer chose: ${computerGuess}</p>
-            <p>wins: ${wins}</p>
-            <p>losses: ${losses}</p>
-        `
+<p>ties: ${ties}</p> <p>You chose: ${userGuess}</p>
+<p>The computer chose: ${computerGuess}</p>
+<p>wins: ${wins}</p>
+<p>losses: ${losses}</p>
+`
+
+}
 
 //fuction for reset 
 function initateGuess() {
