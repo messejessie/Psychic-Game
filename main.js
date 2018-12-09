@@ -1,15 +1,12 @@
 // Declaring all of the variables in the array
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-//text variables: 
-    var winText = document.getElementById("win");
-    var loseText = document.getElementById("lose");
-    var GuessText = document.getElementById("guess");
-    var currentText = document.getElementById("letter");
-  
+//text: 
+var game = document.querySelector('main');
+
 // Declaring the wins, losses, and guessesLeft variables
-var wins = 0,
-    losses = 0;
+var wins = 0;
+var losses = 0;
 var guessesLeft = 10;
 
 // Computer Guess
@@ -26,6 +23,7 @@ document.onkeyup = function (event) {
 
     if (userGuess === computerGuess) {
         wins++;
+        initateGuess();
         console.log(wins);
 
     }
@@ -40,14 +38,22 @@ document.onkeyup = function (event) {
     else if (guessesLeft === 0) {
         losses++;
         console.log(lossses);
+        initateGuess();
     }
 
     // display to text:
-        currentText.textContent = "You chose: " + userGuess;
-        winsText.textContent = "Wins: " + wins;
-        loseText.textContent = "Losses: " + losses;
-        guessText.textContent = "Guesses Left: " + guessesLeft;
+    game.innerHTML = '
+            <p> Wins: ${ wins }</p>
+            <p>Loses: ${losses}</p>
+            <p>Guesses Left: ${guessesLeft}</p>
+            <p>Users Guess: ${userGuess}</p>'
+
+
 }
 
+//fuction for reset 
+function initateGuess() {
+    computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    guessesLeft = 10;
 
-
+}
