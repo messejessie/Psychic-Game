@@ -22,19 +22,18 @@ document.onkeyup = function (event) {
     if (userGuess === computerGuess) {
         wins++;
         console.log(wins);
+        
     }
 
     //defining loss
-    if (guessesLeft !== 10) {
+    else if (guessesLeft !== 10) {
         guessesLeft--;
         console.log(guessesLeft);
     }
-    
+
     // Losses increase if all 10 guesses are wrong
-    else if (guessesLeft === 0) {
+    if (guessesLeft === 0){
         losses++;
         console.log(lossses);
     }
-
 }
-
