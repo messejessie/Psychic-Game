@@ -1,26 +1,40 @@
-//Global Variables:
+// Declaring all of the variables in the array
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var rando = Math.floor(Math.random()*26)
-var validate;
-var wins = 0;
-var lose = 0;
-var gusss = 0;
-var guessLeft = 9;
 
-//User Typing Letter:
+
+// Declaring the wins, losses, and guessesLeft variables
+var wins = 0,
+    losses = 0;
+var guessesLeft = 10;
+
+// Computer Guess
+var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+// User Function
 document.onkeyup = function (event) {
+
+    //User event 
     var userGuess = event.key;
+    console.log(userGuess, computerGuess);
 
-    //User Types letter:
-    alphabet.indexOf(userGuess);
-     if(validate == -1){
-         alert("Invaild Key Option")
-         console.log(validate)
-     }
-     
-         }
+    // Defining wins
 
-    //Computer Guess 
-    computerGuess = alphabet[rando]
+    if (userGuess === computerGuess) {
+        wins++;
+        console.log(wins);
+    }
 
+    //defining loss
+    if (guessesLeft !== 10) {
+        guessesLeft--;
+        console.log(guessesLeft);
+    }
+    
+    // Losses increase if all 10 guesses are wrong
+    else if (guessesLeft === 0) {
+        losses++;
+        console.log(lossses);
+    }
+
+}
 
