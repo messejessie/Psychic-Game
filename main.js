@@ -1,7 +1,12 @@
 // Declaring all of the variables in the array
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-
+//text variables: 
+    var winText = document.getElementById("win");
+    var loseText = document.getElementById("lose");
+    var GuessText = document.getElementById("guess");
+    var currentText = document.getElementById("letter");
+  
 // Declaring the wins, losses, and guessesLeft variables
 var wins = 0,
     losses = 0;
@@ -36,4 +41,13 @@ document.onkeyup = function (event) {
         losses++;
         console.log(lossses);
     }
+
+    // display to text:
+        currentText.textContent = "You chose: " + userGuess;
+        winsText.textContent = "Wins: " + wins;
+        loseText.textContent = "Losses: " + losses;
+        guessText.textContent = "Guesses Left: " + guessesLeft;
 }
+
+
+
