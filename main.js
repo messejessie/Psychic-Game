@@ -44,8 +44,8 @@ document.onkeyup = function (event) {
 // display to text:
 game.innerHTML = `
            
-<p>ties: ${ties}</p> <p>You chose: ${userGuess}</p>
-<p>The computer chose: ${computerGuess}</p>
+<p>Your choose: ${userGuess}</p>
+<p>Guesses left: ${guessesLeft}</p>
 <p>wins: ${wins}</p>
 <p>losses: ${losses}</p>
 `
