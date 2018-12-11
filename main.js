@@ -18,31 +18,33 @@ document.onkeyup = function (event) {
     //User event 
     var userGuess = event.key;
     console.log(userGuess, computerGuess);
+    
 
     // Defining wins
+    if (guessesLeft > 0) {
+        if (userGuess === computerGuess) {
+            wins++;
+            guessesLeft--;
+            console.log(guessesLeft);
+            initateGuess();
+            console.log(wins);
 
-    if (userGuess === computerGuess) {
-        wins++;
-        initateGuess();
-        console.log(wins);
-
+        }
+        else {
+            guessesLeft--;
+            console.log(guessesLeft);
+        }
     }
 
-    //defining loss
-    else if (guessesLeft !== 10) {
-        guessesLeft--;
-        console.log(guessesLeft);
-    }
-
-    // Losses increase if all 10 guesses are wrong
-    else if (guessesLeft === 0) {
+    //Defining loss
+    else {
         losses++;
-        console.log(lossses);
+        console.log(losses);
         initateGuess();
     }
 
-// display to text:
-game.innerHTML = `
+      // display to text:
+    game.innerHTML = `
            
 <p>Your choose: ${userGuess}</p>
 <p>Guesses left: ${guessesLeft}</p>
