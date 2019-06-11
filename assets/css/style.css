@@ -1,23 +1,28 @@
+
 .jumbotron {
     padding-left: 300px;
     padding-right: 300px;
-    background-image: url(background.jpg);
+    background-image: url(../images/background.jpg);
     background-size: cover;
     color: ghostwhite
 
 
 };
 
-
-body{
-    background-image: url(background.jpg);
+.body{
+    background-image: url(../images/background.jpg);
     background-size: cover
 };
 
+
+
+
 main{
+    
     margin-right: 300px;
     margin-left: 300px;
     padding-right: 200px;
     padding-left: 200px;
     color: ghostwhite
-}
+
+} 
